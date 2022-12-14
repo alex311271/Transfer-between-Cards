@@ -27,7 +27,6 @@ public class MoneyTransferTest {
 
 
     @Test
-    @DisplayName("Пополнение карты № **** 0001")
     void transferToFirstCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
@@ -50,7 +49,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Отмена пополнения карты № **** 0001")
     void cancelTransferToFirstCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
@@ -73,7 +71,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Пополнение карты № **** 0002")
     void transferToSecondCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
@@ -95,7 +92,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Отмена пополнения карты № **** 0002")
     void cancelTransferToSecondCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
@@ -119,7 +115,6 @@ public class MoneyTransferTest {
 
 
     @Test
-    @DisplayName("Перевод суммы превышающей баланс карты № **** 0002" )
      void transferToSecondCardAmountGreaterCardBalance() {
 
         var loginPage = new LoginPage();
@@ -140,7 +135,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Перевод суммы превышающей баланс карты № **** 0001")
     void transferToFirstCardAmountGreaterCardBalance() {
 
         var loginPage = new LoginPage();
@@ -162,7 +156,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Сообщение об ошибке при не заполнении поля с номером карты")
     void errorMessageSecondCard() {
 
         int amount = 1000;
@@ -182,7 +175,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Сообщение об ошибке при не заполнении поля с номером карты")
     void errorMessageFirstCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
@@ -202,7 +194,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Пополнение карты № **** 0001 суммой с копейками")
     void transferToFirstCardDoubleAmount() {
         double amount = 100.65;
         var loginPage = new LoginPage();
@@ -225,7 +216,6 @@ public class MoneyTransferTest {
     }
 
     @Test
-    @DisplayName("Пополнение карты № **** 0002 суммой с копейками")
     void transferToSecondCardDoubleAmount() {
         double amount = 100.65;
         var loginPage = new LoginPage();
