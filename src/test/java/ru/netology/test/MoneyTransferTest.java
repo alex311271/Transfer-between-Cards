@@ -5,6 +5,7 @@ import com.codeborne.selenide.Configuration;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.DashboardPage;
@@ -26,7 +27,8 @@ public class MoneyTransferTest {
 
 
     @Test
-    public void transferToFirstCard() {
+    @DisplayName("Пополнение карты № **** 0001")
+    void transferToFirstCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -48,7 +50,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void cancelTransferToFirstCard() {
+    @DisplayName("Отмена пополнения карты № **** 0001")
+    void cancelTransferToFirstCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -70,7 +73,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void transferToSecondCard() {
+    @DisplayName("Пополнение карты № **** 0002")
+    void transferToSecondCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -91,7 +95,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void cancelTransferToSecondCard() {
+    @DisplayName("Отмена пополнения карты № **** 0002")
+    void cancelTransferToSecondCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -114,7 +119,8 @@ public class MoneyTransferTest {
 
 
     @Test
-    public void transferToSecondCardAmountGreaterCardBalance() {
+    @DisplayName("Перевод суммы превышающей баланс карты № **** 0002" )
+     void transferToSecondCardAmountGreaterCardBalance() {
 
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -134,7 +140,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void transferToFirstCardAmountGreaterCardBalance() {
+    @DisplayName("Перевод суммы превышающей баланс карты № **** 0001")
+    void transferToFirstCardAmountGreaterCardBalance() {
 
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -155,7 +162,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void errorMessageSecondCard() {
+    @DisplayName("Сообщение об ошибке при не заполнении поля с номером карты")
+    void errorMessageSecondCard() {
 
         int amount = 1000;
         var loginPage = new LoginPage();
@@ -174,7 +182,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void errorMessageFirstCard() {
+    @DisplayName("Сообщение об ошибке при не заполнении поля с номером карты")
+    void errorMessageFirstCard() {
         int amount = 1000;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -193,7 +202,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void transferToFirstCardDoubleAmount() {
+    @DisplayName("Пополнение карты № **** 0001 суммой с копейками")
+    void transferToFirstCardDoubleAmount() {
         double amount = 100.65;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
@@ -215,7 +225,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    public void transferToSecondCardDoubleAmount() {
+    @DisplayName("Пополнение карты № **** 0002 суммой с копейками")
+    void transferToSecondCardDoubleAmount() {
         double amount = 100.65;
         var loginPage = new LoginPage();
         var loginData = DataHelper.getLoginData();
