@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
-import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -14,6 +13,7 @@ public class DashboardPage {
     private SelenideElement infoCard = $("[data-test-id=dashboard]");
     private ElementsCollection listCardButton = $$("[data-test-id=action-deposit");
     private ElementsCollection cards = $$(".list__item div");
+    private SelenideElement errorMessage = $("[data-test-id=error-notification]");
 
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
@@ -41,16 +41,9 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public TransferPage firstCardSelection(DataHelper.FirstCardIndex indexButton) {
-        listCardButton.get(indexButton.getIndexButton()).click();
+    public TransferPage SelectCard(int cardIndex) {
+        listCardButton.get(cardIndex).click();
         return new TransferPage();
     }
-
-    public TransferPage secondCardSelection(DataHelper.SecondCardIndex indexButton) {
-        listCardButton.get(indexButton.getIndexButton()).click();
-        return new TransferPage();
-    }
-
-
 
 }

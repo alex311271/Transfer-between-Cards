@@ -12,7 +12,7 @@ public class VerificationPage {
     SelenideElement verifyButton = $("[data-test-id=action-verify");
 
     public VerificationPage() {
-        $("[data-test-id=code] input").shouldBe(Condition.visible);
+        codInput.shouldBe(Condition.visible);
     }
 
     public DashboardPage codeInput(DataHelper.VerificationCod cod) {

@@ -26,36 +26,29 @@ public class DataHelper {
     }
 
     @Value
-    public static class FirstCard {
-        private String number;
+    public  static class CardInfo {
+        private int cardIndex;
+        private String cardNumber;
+    }
+    public static CardInfo getFirstCardInfo() {
+        return new CardInfo(0, "5559000000000001");
     }
 
-    public static FirstCard getFirstCard(LoginData loginData) {
-        return new FirstCard("5559000000000001");
-    }
-
-    @Value
-    public static class SecondCard {
-        private String number;
-    }
-
-    public static SecondCard getSecondCard(LoginData loginData) {
-        return new SecondCard("5559000000000002");
+    public static CardInfo getSecondCardInfo() {
+        return new CardInfo(1, "5559000000000002");
     }
 
     @Value
-    public  static class FirstCardIndex {
-        private int indexButton;
-    }
-    public static FirstCardIndex getFirstCardIndex(LoginData loginData) {
-        return new FirstCardIndex(0);
+    public static class AmountInfo{
+        private int amountInt;
+        private double amountDouble;
+
     }
 
-    @Value
-    public  static class SecondCardIndex {
-        private int indexButton;
+    public static AmountInfo getAmountInfo() {
+        return new AmountInfo (1000, 10.65);
     }
-    public static SecondCardIndex getSecondCardButton(LoginData loginData) {
-        return new SecondCardIndex(1);
-    }
+
+
+
 }
