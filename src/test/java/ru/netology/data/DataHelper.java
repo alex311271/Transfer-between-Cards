@@ -38,17 +38,4 @@ public class DataHelper {
         return new CardInfo(1, "5559000000000002");
     }
 
-    @Value
-    public static class AmountInfo{
-        private int amountInt;
-        private double amountDouble;
-
-    }
-
-    public static AmountInfo getAmountInfo() {
-        return new AmountInfo (1000, 10.65);
-    }
-
-
-
 }

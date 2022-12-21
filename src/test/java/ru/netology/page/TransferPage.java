@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class TransferPage {
 
@@ -24,38 +23,28 @@ public class TransferPage {
     }
 
 
-    public DashboardPage transferToCard(int amount, String cardNumber) {
-        amountInput.setValue(String.valueOf(amount));
+    public DashboardPage transferToCard(String amount, String cardNumber) {
+        amountInput.setValue(amount);
         cardOutNumber.setValue(cardNumber);
         transferButton.click();
         return new DashboardPage();
     }
 
-    public DashboardPage transferToCardDoubleAmount(double amount, String cardNumber) {
-        amountInput.setValue(String.valueOf(amount));
-        cardOutNumber.setValue(cardNumber);
-        transferButton.click();
-        return new DashboardPage();
-    }
 
-    public void CardErrorMessage(int amount) {
-        amountInput.setValue(String.valueOf(amount));
+    public void cardErrorMessage(String amount, String cardNumber) {
+        amountInput.setValue(amount);
+        cardOutNumber.setValue(cardNumber);
         transferButton.click();
         errorMessage.shouldBe(Condition.visible);
+
     }
 
 
-    public DashboardPage cancelTransferToCard(int amount, String cardNumber) {
-        amountInput.setValue(String.valueOf(amount));
+    public DashboardPage cancelTransferToCard(String amount, String cardNumber) {
+        amountInput.setValue(amount);
         cardOutNumber.setValue(cardNumber);
         cancelButton.click();
         return new DashboardPage();
     }
 
-    public void transferToCardAmountGreaterCardBalance(int amount, String cardNumber) {
-        amountInput.setValue(String.valueOf(amount *2));
-        cardOutNumber.setValue(cardNumber);
-        transferButton.click();
-        errorMessage.shouldBe(Condition.visible);
-    }
 }

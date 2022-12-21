@@ -13,7 +13,6 @@ public class DashboardPage {
     private SelenideElement infoCard = $("[data-test-id=dashboard]");
     private ElementsCollection listCardButton = $$("[data-test-id=action-deposit");
     private ElementsCollection cards = $$(".list__item div");
-    private SelenideElement errorMessage = $("[data-test-id=error-notification]");
 
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
@@ -41,7 +40,7 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public TransferPage SelectCard(int cardIndex) {
+    public TransferPage selectCard(int cardIndex) {
         listCardButton.get(cardIndex).click();
         return new TransferPage();
     }
